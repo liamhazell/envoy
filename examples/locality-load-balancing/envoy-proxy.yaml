@@ -54,7 +54,7 @@ static_resources:
       - locality:
           region: local
           zone: zone-1
-        load_balancing_weight: 1
+        load_balancing_weight: 2
         priority: 0  # highest
         lb_endpoints:
         - endpoint:
@@ -69,7 +69,7 @@ static_resources:
           region: local
           zone: zone-2
         load_balancing_weight: 1
-        priority: 1
+        priority: 0
         lb_endpoints:
         - endpoint:
             address:
@@ -79,31 +79,3 @@ static_resources:
             health_check_config:
               port_value: 8080
             hostname: backend-local-2
-      - locality:
-          region: remote
-          zone: zone-1
-        load_balancing_weight: 1
-        priority: 1
-        lb_endpoints:
-        - endpoint:
-            address:
-              socket_address:
-                address: backend-remote-1
-                port_value: 8080
-            health_check_config:
-              port_value: 8080
-            hostname: backend-remote-1
-      - locality:
-          region: remote
-          zone: zone-2
-        load_balancing_weight: 1
-        priority: 2
-        lb_endpoints:
-        - endpoint:
-            address:
-              socket_address:
-                address: backend-remote-2
-                port_value: 8080
-            health_check_config:
-              port_value: 8080
-            hostname: backend-remote-2
