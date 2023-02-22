@@ -39,6 +39,8 @@ static_resources:
   - name: backend
     type: STRICT_DNS
     lb_policy: ROUND_ROBIN
+    common_lb_config:
+      locality_weighted_lb_config:
     health_checks:
     - interval: 2s
       timeout: 3s
@@ -55,7 +57,7 @@ static_resources:
           region: local
           zone: zone-1
         load_balancing_weight: 2
-        priority: 0  # highest
+        priority: 1  # highest
         lb_endpoints:
         - endpoint:
             address:
@@ -69,7 +71,7 @@ static_resources:
           region: local
           zone: zone-2
         load_balancing_weight: 1
-        priority: 0
+        priority: 1
         lb_endpoints:
         - endpoint:
             address:
