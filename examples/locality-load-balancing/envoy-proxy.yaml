@@ -57,7 +57,7 @@ static_resources:
           region: local
           zone: zone-1
         load_balancing_weight: 2
-        priority: 1  # highest
+        priority: 0  # highest
         lb_endpoints:
         - endpoint:
             address:
@@ -71,7 +71,7 @@ static_resources:
           region: local
           zone: zone-2
         load_balancing_weight: 1
-        priority: 1
+        priority: 0
         lb_endpoints:
         - endpoint:
             address:
